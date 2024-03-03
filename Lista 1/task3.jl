@@ -28,26 +28,25 @@ function swap(x::Array, a_index::Int64, b_index::Int64)
     return new_x
 end
 
-function generate_permutations(sequence::Array, result_arr::Array, depth=1)
+function generate_permutations(sequence::Array, depth=1)
     l = length(sequence)
+    result_arr = []
 
     for index in depth:l
         new_seq = swap(sequence, depth, index)
         if depth == l
             push!(result_arr, new_seq)
         else
-            push!(result_arr, generate_permutations(new_seq, result_arr, depth+1))
+            result_arr = vcat(result_arr, generate_permutations(new_seq, depth+1))
         end
     end
-
     return result_arr
 end
 
 function result(n::Int64)
     start_seq = generate_sequence(n)
-    permutations = []
 
-    return generate_permutations(start_seq, permutations)
+    return generate_permutations(start_seq)
 end
 
-println(length(result(3)))
+println(length(result(4)))
