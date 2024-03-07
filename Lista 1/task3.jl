@@ -10,7 +10,7 @@ function is_permutation(x::Array)
         push!(A, elem)
     end
         
-    return length(Set(x)) == length(x)
+    return length(A) == length(x)
 end
 
 println(is_permutation([1,2,3,4]))
