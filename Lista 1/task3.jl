@@ -2,6 +2,14 @@
 # exactly once). Generate all permutations of a given length n < 8. 
 
 function is_permutation(x::Array)
+    A = []
+    for elem in x
+        if elem in(A)
+            return false
+        end
+        push!(A, elem)
+    end
+        
     return length(Set(x)) == length(x)
 end
 
@@ -49,4 +57,4 @@ function result(n::Int64)
     return generate_permutations(start_seq)
 end
 
-println(length(result(4)))
+println(result(3))
