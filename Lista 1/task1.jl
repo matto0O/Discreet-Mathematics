@@ -12,6 +12,10 @@ function my_ceil(x)
     return Int64(result)
 end
 
+function my_set(x)
+    return Set(x)
+end
+
 function my_floor(x)
     if rem(x,1) == 0
         return Int64(x)
@@ -45,16 +49,19 @@ function my_mod(x::Int64, y::Int64)
     return x 
 end
 
-# println(my_ceil(-7.5))
-# println(my_ceil(-0.5))
-# println(my_ceil(0))
-# println(my_ceil(0.8))
+println("CEIL")
+println(my_ceil(-7.5))
+println(my_ceil(-0.5))
+println(my_ceil(0))
+println(my_ceil(0.8))
 
-# println(my_floor(-1.53))
-# println(my_floor(1.53))
-# println(my_floor(0.53))
-# println(my_floor(0))
+println("FLOOR")
+println(my_floor(-1.53))
+println(my_floor(1.53))
+println(my_floor(0.53))
+println(my_floor(0))
 
+println("MOD")
 println(my_mod(48, 11))
 println(48 % 11)
 println(my_mod(48, 1121))
@@ -63,3 +70,6 @@ println(my_mod(-121, 11))
 println(-121 % 11)
 println(my_mod(-36, 11))
 println(-36 % 11)
+
+println("SET")
+print(my_set([1,3]))
