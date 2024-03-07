@@ -8,6 +8,7 @@ end
 function find_primes(x::Int64)
     sieve_size = floor(Int64, sqrt(x)) + 1
     sieve_size = 300
+    # sieve_size needs to be computed in some way, not hardcoded
     sieve = create_sieve(sieve_size)
     primes = []
 
